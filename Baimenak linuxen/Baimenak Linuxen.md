@@ -9,6 +9,11 @@
     - [Adibideak](#adibideak)
     - [Baimenak modu oktalean](#baimenak-modu-oktalean)
   - [Sticky Bit](#sticky-bit)
+  - [SUID eta GUID baimenak](#suid-eta-guid-baimenak)
+    - [SUID](#suid)
+  - [Ezaugarri bereziak - lsattr eta chattr](#ezaugarri-bereziak---lsattr-eta-chattr)
+- [Ariketak](#ariketak)
+  - [Ariketak 1](#ariketak-1)
 
 ## Fitxategi eta direktorioen baimenak
 
@@ -140,3 +145,103 @@ chmod +t froga.txt
 ```
 
 ![alt text](image-1.png)
+
+## SUID eta GUID baimenak
+
+### SUID
+
+SUID aktibatuta dagoenean fitxategi hau exekutatzen duen erabiltzaileak sortzailearen baimenak izango ditu
+
+```bash
+chmod u+s froga.txt
+```
+
+Froga egiteko sortu exekutable bat hurrengo edukiarekin eta izenarekin
+
+Suidfroga.sh
+
+```bash
+echo erabiltzailea
+#!/bin/bash
+id
+
+echo $EUID
+```
+
+Ezarri SUID suidfroga.sh fitxategiari
+
+```bash
+chmod u+s suidfroga.sh
+```
+
+```bash
+chmod 4755 suidfroga.sh
+```
+
+## Ezaugarri bereziak - lsattr eta chattr
+
+Ezaugarri bereziak ikusteko `lsattr´ agindua erabiliko dugu
+
+Ezaugarri bereziak aldatzeko `chattr´ agindua erabiliko dugu
+
+- **i** ezaugarriarekin fitxategi bat inmutablea bilakatuko da. Inorrek ezingo du aldatu. Ezta rootek. Ezabatzeko i atributoa kendu beharko genuke.
+```bash
+chattr +i froga.txt
+lsattr froga.txt
+```
+
+- **u** ezaugarriarenkin fitxategi bat ezabatzen dugunean datuak gordeta gelditzen dira eta berreskurapena ahalbidetzen du.
+```bash
+chattr +u froga.txt
+```
+
+- **e** ezaugarruarekin fitxategia ezabatzen denean, okupatzen zuen memoria zeroarekin berridazten da.
+
+```bash
+chattr +e froga.txt
+```
+- **c** ezaugarriarekin fitxategi bat konprimituta gordeko da.
+
+```bash
+chattr +c froga.txt
+```
+
+- **a** ezaugarriarekin fitxategi bati bakarrik gehitu ahal zaizkio gauzak, hau da, ezin da aurretik zegoen ezer aldatu.
+  
+```bash
+chattr +a froga.txt
+```
+
+# Ariketak
+
+## Ariketak 1
+
+lotu dagokion baimenarekin:
+
+- 462 --> r--rw--w-
+- 123 --> ----w--wx
+- 711 --> rwx--x--x
+- 333 --> -wx-wx-wx
+- 161 --> --xrw---x
+- 765 --> rwxrw-r-x
+- 567 --> r-x
+- 101
+- 162
+
+- rwx--x--x
+
+- --x-w--wx
+
+- --x-----x
+
+- -wx-wx-wx
+
+- r-xrw-rwx
+
+- rwxrw-r-x
+
+- --xrw--w-
+
+- r--rw--w-
+
+- --xrw---x
