@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# Pedir al usuario que ingrese los dos nombres desde el terminal
-echo "Ingrese el primer nombre: "
-read nombre1
+# Erabiltzaileari bi izena terminalean sartzea eskatu
+echo "Idatzi lehen izena: "
+read izena1
 
-echo "Ingrese el segundo nombre: "
-read nombre2
+echo "Idatzi bigarren izena: "
+read izena2
 
-# Comprobar si los nombres son iguales
-if [ "$nombre1" = "$nombre2" ]; then
-    echo "Los nombres son iguales."
+# Izenak berdinak direla zihurtarazi
+if [ "$izena1" = "$izena2" ]; then
+    echo "Izenak berdinak dira."
 else
-    echo "Los nombres son diferentes."
+    echo "Izenak desbedinak dira."
 fi

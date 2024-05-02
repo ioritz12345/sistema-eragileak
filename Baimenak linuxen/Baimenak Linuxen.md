@@ -14,6 +14,12 @@
   - [Ezaugarri bereziak - lsattr eta chattr](#ezaugarri-bereziak---lsattr-eta-chattr)
 - [Ariketak](#ariketak)
   - [Ariketak 1](#ariketak-1)
+- [Ariketa 2](#ariketa-2)
+- [Ariketa 3](#ariketa-3)
+- [Ariketa 4](#ariketa-4)
+- [Ariketa 5](#ariketa-5)
+- [Ariketa 6](#ariketa-6)
+- [Ariketa 7](#ariketa-7)
 
 ## Fitxategi eta direktorioen baimenak
 
@@ -224,24 +230,67 @@ lotu dagokion baimenarekin:
 - 333 --> -wx-wx-wx
 - 161 --> --xrw---x
 - 765 --> rwxrw-r-x
-- 567 --> r-x
-- 101
-- 162
+- 567 --> r-xrw-rwx
+- 101 --> --x-----x
+- 162 --> --xrw--w-
 
-- rwx--x--x
+Ebatzia:
 
-- --x-w--wx
+- rwx--x--x --> 711
+- --x-w--wx --> 123
+- --x-----x --> 101
+- -wx-wx-wx --> 333
+- r-xrw-rwx --> 567
+- rwxrw-r-x --> 765
+- --xrw--w- --> 162
+- r--rw--w- --> 362
+- --xrw---x --> 161
 
-- --x-----x
+# Ariketa 2
 
-- -wx-wx-wx
+Zein da fitxategi honen baimenen baimena modu oktalean?
 
-- r-xrw-rwx
+![alt text](image-13.png)
 
-- rwxrw-r-x
+# Ariketa 3
 
-- --xrw--w-
+Jarri hurrengo baimenak modu oktalean
 
-- r--rw--w-
+- r--r-xrw-
+- --xr-xr--
+- r--------
+- --------x
+- rwsr-xr-x
+- rwxr-sr-x
+- r--rw---t
 
-- --xrw---x
+# Ariketa 4
+
+Zer gertatuko da hurrengo agindua exekutatzerakoan?
+
+![alt text](image-14.png)
+
+1. 'Whoami' komandoaren output-a file fitxategian gordeko da, fitxategiaren jabea izateagatik baimenek ez baitidate eragiten
+
+2. 'Whoami' komandoaren output-a ezin izango da file fitxategian gorde, jabea izan arren, fitxategian esleitutako baimena gailentzen delako
+
+# Ariketa 5
+
+Nola lortuko zenuke "file" artxiboaren baimenak ikusten den moduan aldatzeko?
+
+![alt text](image-15.png)
+
+# Ariketa 6
+
+Zortzitarrean zer baimen esleitu beharko dut artxiboak adierazitako baimenak izan ditzan lortzeko?
+
+![alt text](image-16.png)
+
+# Ariketa 7
+
+Honako baimen hauek konfiguratuta dituen fitxategi hau ezabatu ahal izango dut?
+
+![alt text](image-17.png)
+
+1. Bai
+2. Ez
