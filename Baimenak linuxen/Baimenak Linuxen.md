@@ -20,6 +20,12 @@
 - [Ariketa 5](#ariketa-5)
 - [Ariketa 6](#ariketa-6)
 - [Ariketa 7](#ariketa-7)
+  - [TALDE BAIMENAK](#talde-baimenak)
+    - [TALDEA SORTU](#taldea-sortu)
+    - [Erabiltzailea taldera ghitzeko](#erabiltzailea-taldera-ghitzeko)
+    - [Erabiltzailearen taldeak ikusteko](#erabiltzailearen-taldeak-ikusteko)
+    - [Taldeak ikusteko](#taldeak-ikusteko)
+    - [Taldeak eta erabiltzaileak zerrendan ikusteko](#taldeak-eta-erabiltzaileak-zerrendan-ikusteko)
 
 ## Fitxategi eta direktorioen baimenak
 
@@ -294,3 +300,36 @@ Honako baimen hauek konfiguratuta dituen fitxategi hau ezabatu ahal izango dut?
 
 1. Bai
 2. Ez
+
+
+## TALDE BAIMENAK
+
+### TALDEA SORTU
+
+```bash
+groupadd (taldearen izena)
+```
+
+### Erabiltzailea taldera ghitzeko
+
+```bash
+usermod -aG ikaslea, Gaizka (taldea+erabiltzailea)
+```
+
+### Erabiltzailearen taldeak ikusteko
+
+```bash
+groups gaizka
+```
+
+### Taldeak ikusteko
+
+```bash
+cat /etc/groups
+```
+
+### Taldeak eta erabiltzaileak zerrendan ikusteko
+
+```bash
+cat /etc/groups
+```
